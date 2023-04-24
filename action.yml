@@ -1,4 +1,4 @@
-name: 'Git Push'
+name: 'Git Push Changes'
 description: 'push changes to a remote git repository.'
 author: 'Bo-Yi Wu'
 inputs:
