@@ -27,3 +27,44 @@ See [action.yml](./action.yml) for more detailed information.
 * `tag` - tag to add to the commit
 * `empty_commit` - allow empty commit
 * `no_verify` - bypasses the pre-commit and commit-msg hooks
+
+## Usage
+
+```yaml
+name: Lint and Testing
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+  statuses: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: update changes
+        run: |
+          echo "I am appleboy" > test.txt
+
+      - name: git push changes
+        uses: appleboy/git-push-action@main
+        with:
+          author_email: teabot@gitea.io
+          author_name: GiteaBot
+          branch: main
+          commit: true
+          commit_message: "[skip ci] Updated changes by gitea bot"
+          remote: git@github.com:go-training/drone-git-push-example.git
+          ssh_key: ${{ secrets.DEPLOY_KEY }}
+```
