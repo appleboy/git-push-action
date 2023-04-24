@@ -1,2 +1,3 @@
 # git-push-action
-deploying code using git push for GitHub Actions
+
+Git push changes to a remote git repository.
