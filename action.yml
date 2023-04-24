@@ -1,0 +1,56 @@
+name: 'Git Push'
+description: 'push changes to a remote git repository.'
+author: 'Bo-Yi Wu'
+inputs:
+  author_name:
+    description: 'git author name'
+    required: true
+  author_email:
+    description: 'git author email'
+    required: true
+  netrc_machine:
+    description: 'netrc machine'
+  netrc_username:
+    description: 'netrc username'
+  netrc_password:
+    description: 'netrc password'
+  ssh_key:
+    description: 'private ssh key'
+  remote:
+    description: 'url of the remote repo'
+    required: true
+  remote_name:
+    description: 'name of the remote repo'
+    default: 'deploy'
+  branch:
+    description: 'name of remote branch'
+    default: 'master'
+  local_branch:
+    description: 'name of local branch'
+    default: 'HEAD'
+  path:
+    description: 'path to git repo'
+  force:
+    description: 'force push to remote'
+  followtags:
+    description: 'push to remote with tags'
+  skip_verify:
+    description: 'skip ssl verification'
+  commit:
+    description: 'commit dirty changes'
+  commit_message:
+    description: 'commit message'
+  tag:
+    description: 'tag to add to the commit'
+  empty_commit:
+    description: 'empty commit'
+  no_verify:
+    description: 'bypasses the pre-commit and commit-msg hooks'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'
