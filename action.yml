@@ -4,10 +4,10 @@ author: 'Bo-Yi Wu'
 inputs:
   author_name:
     description: 'git author name'
-    required: true
+    default: 'GitHub Actions'
   author_email:
     description: 'git author email'
-    required: true
+    default: '41898282+github-actions[bot]@users.noreply.github.com'
   netrc_machine:
     description: 'netrc machine'
   netrc_username:
@@ -43,7 +43,7 @@ inputs:
   tag:
     description: 'tag to add to the commit'
   empty_commit:
-    description: 'empty commit'
+    description: 'allow empty commit'
   no_verify:
     description: 'bypasses the pre-commit and commit-msg hooks'
 
