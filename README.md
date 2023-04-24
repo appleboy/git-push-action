@@ -31,20 +31,10 @@ See [action.yml](./action.yml) for more detailed information.
 ## Usage
 
 ```yaml
-name: Lint and Testing
+name: testing
 
 on:
   push:
-  pull_request:
-
-permissions:
-  actions: read
-  contents: read
-  statuses: write
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   testing:
