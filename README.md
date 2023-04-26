@@ -47,16 +47,16 @@ jobs:
 
       - name: update changes
         run: |
-          echo "I am appleboy" > test.txt
+          openssl rand -hex 16 > test.txt
 
       - name: git push changes
-        uses: appleboy/git-push-action@main
+        uses: appleboy/git-push-action@v0.0.2
         with:
           author_email: teabot@gitea.io
           author_name: GiteaBot
           branch: main
           commit: true
           commit_message: "[skip ci] Updated changes by gitea bot"
-          remote: git@github.com:go-training/drone-git-push-example.git
+          remote: git@github.com:appleboy/git-push-action.git
           ssh_key: ${{ secrets.DEPLOY_KEY }}
 ```
