@@ -1,5 +1,7 @@
 # git-push-action
 
+[![Lint and Testing](https://github.com/appleboy/git-push-action/actions/workflows/testing.yml/badge.svg?branch=main)](https://github.com/appleboy/git-push-action/actions/workflows/testing.yml)
+
 Git push changes to a remote git repository.
 
 This thing is built using [Golang](https://go.dev) and [drone-git-push](https://github.com/appleboy/drone-git-push). 🚀
