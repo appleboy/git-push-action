@@ -57,18 +57,3 @@ jobs:
           commit_message: "[skip ci] Updated changes by gitea bot"
           remote: git@github.com:appleboy/git-push-action.git
           ssh_key: ${{ secrets.DEPLOY_KEY }}
-
-      - name: update some text 4
-        run: |
-          openssl rand -hex 16 > test.txt
-
-      - name: Updated changes by gitea bot
-        uses: ./
-        with:
-          author_email: teabot@gitea.io
-          author_name: GiteaBot
-          branch: branch04
-          commit: true
-          fore: true
-          commit_message: "[skip ci] Updated changes by gitea bot"
-          remote: https://appleboy:${{ secrets.GITHUB_TOKEN }}@github.com/appleboy/git-push-action.git
