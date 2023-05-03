@@ -63,9 +63,7 @@ jobs:
         id: delete_stuff
         with:
           github_token: ${{ github.token }}
-          ignore_branches: main
-          github_base_url: https://github.mycompany.com/api/v3
-
+          github_base_url: https://github.com/api/v3
           # Disable dry run and actually get stuff deleted
           dry_run: no
 
