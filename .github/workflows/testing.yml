@@ -57,15 +57,3 @@ jobs:
           commit_message: "[skip ci] Updated changes by gitea bot"
           remote: git@github.com:appleboy/git-push-action.git
           ssh_key: ${{ secrets.DEPLOY_KEY }}
-
-      - name: Delete those pesky dead branches
-        uses: phpdocker-io/github-actions-delete-abandoned-branches@v1
-        id: delete_stuff
-        with:
-          github_token: ${{ github.token }}
-          github_base_url: https://github.com/api/v3
-          # Disable dry run and actually get stuff deleted
-          dry_run: no
-
-      - name: Get output
-        run: "echo 'Deleted branches: ${{ steps.delete_stuff.outputs.deleted_branches }}'"
