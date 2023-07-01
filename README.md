@@ -10,25 +10,28 @@ This thing is built using [Golang](https://go.dev) and [drone-git-push](https://
 
 See [action.yml](./action.yml) for more detailed information.
 
-* `author_name` - git author name, default is `GitHub Actions`.
-* `author_email` - git author email, default is `41898282+github-actions[bot]@users.noreply.github.com`.
-* `netrc_machine` - netrc machine name
-* `netrc_username` - netrc username
-* `netrc_password` - netrc password
-* `ssh_key` - private ssh key
-* `remote` - url of the remote repo. **required**
-* `remote_name` - name of the remote repo, default is `deploy`
-* `branch` - name of remote branch, default is `master`
-* `local_branch` - name of local branch, default is `HEAD`
-* `path` - path to git repo
-* `force` - force push to remote
-* `followtags` - push to remote with tags
-* `skip_verify` - skip ssl verification
-* `commit` - commit dirty changes
-* `commit_message` - commit message
-* `tag` - tag to add to the commit
-* `empty_commit` - allow empty commit
-* `no_verify` - bypasses the pre-commit and commit-msg hooks
+| Variable         | Description                                              | Default                                       |
+|------------------|----------------------------------------------------------|-----------------------------------------------|
+| author_name      | git author name                                          | GitHub Actions                                |
+| author_email     | git author email                                         | 41898282+github-actions[bot]@users.noreply.github.com |
+| netrc_machine    | netrc machine                                            |                                               |
+| netrc_username   | netrc username                                           |                                               |
+| netrc_password   | netrc password                                           |                                               |
+| ssh_key          | private ssh key                                          |                                               |
+| remote           | url of the remote repo                                   |                                               |
+| remote_name      | name of the remote repo                                  | deploy                                        |
+| branch           | name of remote branch                                    | master                                        |
+| local_branch     | name of local branch                                     | HEAD                                          |
+| path             | path to git repo                                         |                                               |
+| force            | force push to remote                                     |                                               |
+| followtags       | push to remote with tags                                 |                                               |
+| skip_verify      | skip ssl verification                                    |                                               |
+| commit           | commit dirty changes                                     |                                               |
+| commit_message   | commit message                                           |                                               |
+| tag              | tag to add to the commit                                 |                                               |
+| empty_commit     | allow empty commit                                       |                                               |
+| no_verify        | bypasses the pre-commit and commit-msg hooks             |                                               |
+| rebase           | rebase local branch on top of remote branch             |                                               |
 
 ## Usage
 

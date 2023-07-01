@@ -46,6 +46,8 @@ inputs:
     description: 'allow empty commit'
   no_verify:
     description: 'bypasses the pre-commit and commit-msg hooks'
+  rebase:
+    description: 'rebase local branch on top of remote branch'
 
 runs:
   using: 'docker'
