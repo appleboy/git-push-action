@@ -41,6 +41,7 @@ jobs:
           commit_message: "[skip ci] Updated changes from default user"
           remote: git@github.com:appleboy/git-push-action.git
           ssh_key: ${{ secrets.DEPLOY_KEY }}
+          rebase: true
 
       - name: update some text 3
         run: |
@@ -57,3 +58,4 @@ jobs:
           commit_message: "[skip ci] Updated changes by gitea bot"
           remote: git@github.com:appleboy/git-push-action.git
           ssh_key: ${{ secrets.DEPLOY_KEY }}
+          rebase: true
