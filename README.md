@@ -53,7 +53,7 @@ jobs:
           openssl rand -hex 16 > test.txt
 
       - name: git push changes
-        uses: appleboy/git-push-action@v0.0.2
+        uses: appleboy/git-push-action@v1.0.0
         with:
           author_email: teabot@gitea.io
           author_name: GiteaBot
