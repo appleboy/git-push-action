@@ -1,53 +1,53 @@
 name: 'Git Push Changes'
-description: 'push changes to a remote git repository.'
+description: 'Push changes to a remote git repository'
 author: 'Bo-Yi Wu'
 inputs:
   author_name:
-    description: 'git author name'
+    description: 'Git author name for commits'
     default: 'GitHub Actions'
   author_email:
-    description: 'git author email'
+    description: 'Git author email for commits'
     default: '41898282+github-actions[bot]@users.noreply.github.com'
   netrc_machine:
-    description: 'netrc machine'
+    description: 'Machine name for netrc authentication'
   netrc_username:
-    description: 'netrc username'
+    description: 'Username for netrc authentication'
   netrc_password:
-    description: 'netrc password'
+    description: 'Password for netrc authentication'
   ssh_key:
-    description: 'private ssh key'
+    description: 'Private SSH key for authentication'
   remote:
-    description: 'url of the remote repo'
+    description: 'URL of the remote repository'
     required: true
   remote_name:
-    description: 'name of the remote repo'
+    description: 'Name of the remote (used in git remote add)'
     default: 'deploy'
   branch:
-    description: 'name of remote branch'
+    description: 'Name of the remote branch to push to'
     default: 'master'
   local_branch:
-    description: 'name of local branch'
+    description: 'Name of the local branch to push from'
     default: 'HEAD'
   path:
-    description: 'path to git repo'
+    description: 'Path to the git repository'
   force:
-    description: 'force push to remote'
+    description: 'Enable force push (--force)'
   followtags:
-    description: 'push to remote with tags'
+    description: 'Push annotated tags along with commits (--follow-tags)'
   skip_verify:
-    description: 'skip ssl verification'
+    description: 'Skip SSL certificate verification'
   commit:
-    description: 'commit dirty changes'
+    description: 'Commit dirty changes before pushing'
   commit_message:
-    description: 'commit message'
+    description: 'Custom commit message (requires commit: true)'
   tag:
-    description: 'tag to add to the commit'
+    description: 'Create and push a tag with the specified name'
   empty_commit:
-    description: 'allow empty commit'
+    description: 'Allow creating an empty commit (--allow-empty)'
   no_verify:
-    description: 'bypasses the pre-commit and commit-msg hooks'
+    description: 'Bypass pre-commit and commit-msg hooks (--no-verify)'
   rebase:
-    description: 'rebase local branch on top of remote branch'
+    description: 'Rebase local branch on top of remote branch before pushing'
 
 runs:
   using: 'docker'
