@@ -1,5 +1,6 @@
 # git-push-action
 
+[![Trivy Security Scan](https://github.com/appleboy/git-push-action/actions/workflows/trivy.yml/badge.svg)](https://github.com/appleboy/git-push-action/actions/workflows/trivy.yml)
 [![Lint and Testing](https://github.com/appleboy/git-push-action/actions/workflows/testing.yml/badge.svg?branch=main)](https://github.com/appleboy/git-push-action/actions/workflows/testing.yml)
 
 A GitHub Action to push changes to a remote git repository.
