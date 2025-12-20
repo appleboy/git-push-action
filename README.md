@@ -139,6 +139,7 @@ Force push to overwrite remote branch:
 | `skip_verify`    | Skip SSL certificate verification                          | No       |                                                         |
 | `remote_name`    | Name of the remote (used in `git remote add`)              | No       | `deploy`                                                |
 | `path`           | Path to the git repository                                 | No       |                                                         |
+| `mirror`         | Push all refs to remote repository with `--mirror`         | No       |                                                         |
 
 ## Authentication
 

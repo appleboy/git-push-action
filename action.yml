@@ -48,6 +48,8 @@ inputs:
     description: 'Bypass pre-commit and commit-msg hooks (--no-verify)'
   rebase:
     description: 'Rebase local branch on top of remote branch before pushing'
+  mirror:
+    description: 'Push all refs to remote repository with --mirror'
 
 runs:
   using: 'docker'
