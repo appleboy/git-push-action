@@ -53,7 +53,7 @@ inputs:
   curl_insecure:
     description: "Allow insecure SSL connections"
   version:
-    description: "drone-git-push version"
+    description: "git-push binary version"
 
 runs:
   using: "composite"
@@ -91,7 +91,7 @@ runs:
         INPUT_REBASE: ${{ inputs.rebase }}
         INPUT_MIRROR: ${{ inputs.mirror }}
         INPUT_CURL_INSECURE: ${{ inputs.curl_insecure }}
-        DRONE_GIT_PUSH_VERSION: ${{ inputs.version }}
+        BINARY_VERSION: ${{ inputs.version }}
 
 branding:
   icon: "terminal"

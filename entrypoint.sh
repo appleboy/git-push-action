@@ -5,8 +5,8 @@ set -euo pipefail
 export GITHUB="true"
 
 GITHUB_ACTION_PATH="${GITHUB_ACTION_PATH%/}"
-DRONT_GIT_PUSH_RELEASE_URL="${DRONT_GIT_PUSH_RELEASE_URL:-https://github.com/appleboy/drone-git-push/releases/download}"
-DRONT_GIT_PUSH_VERSION="${DRONT_GIT_PUSH_VERSION:-1.2.1}"
+BINARY_RELEASE_URL="${BINARY_RELEASE_URL:-https://github.com/appleboy/drone-git-push/releases/download}"
+BINARY_VERSION="${BINARY_VERSION:-1.2.1}"
 
 # Error codes
 readonly ERR_UNKNOWN_PLATFORM=2
@@ -37,8 +37,8 @@ function detect_client_info() {
 }
 
 detect_client_info
-DOWNLOAD_URL_PREFIX="${DRONT_GIT_PUSH_RELEASE_URL}/v${DRONT_GIT_PUSH_VERSION}"
-CLIENT_BINARY="drone-git-push-${DRONT_GIT_PUSH_VERSION}-${CLIENT_PLATFORM}-${CLIENT_ARCH}"
+DOWNLOAD_URL_PREFIX="${BINARY_RELEASE_URL}/v${BINARY_VERSION}"
+CLIENT_BINARY="drone-git-push-${BINARY_VERSION}-${CLIENT_PLATFORM}-${CLIENT_ARCH}"
 TARGET="${GITHUB_ACTION_PATH}/${CLIENT_BINARY}"
 
 # Check if binary already exists and is executable (caching)
@@ -70,4 +70,7 @@ if ! "${TARGET}" --version; then
   log_error "Failed to execute ${TARGET} --version. The binary may be corrupted." "${ERR_VERSION_CHECK_FAILED}"
 fi
 echo "======================================="
+
+# Execute the binary
+"${TARGET}" "$@"
 
