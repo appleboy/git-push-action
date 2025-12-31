@@ -52,9 +52,41 @@ inputs:
     description: 'Push all refs to remote repository with --mirror'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+  steps:
+    - name: Set GitHub Path
+      run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+      shell: bash
+      env:
+        GITHUB_ACTION_PATH: ${{ github.action_path }}
+    - id: entrypoint
+      name: Run entrypoint.sh
+      run: entrypoint.sh
+      shell: bash
+      env:
+        GITHUB_ACTION_PATH: ${{ github.action_path }}
+        INPUT_AUTHOR_NAME: ${{ inputs.author_name }}
+        INPUT_AUTHOR_EMAIL: ${{ inputs.author_email }}
+        INPUT_NETRC_MACHINE: ${{ inputs.netrc_machine }}
+        INPUT_NETRC_USERNAME: ${{ inputs.netrc_username }}
+        INPUT_NETRC_PASSWORD: ${{ inputs.netrc_password }}
+        INPUT_SSH_KEY: ${{ inputs.ssh_key }}
+        INPUT_REMOTE: ${{ inputs.remote }}
+        INPUT_REMOTE_NAME: ${{ inputs.remote_name }}
+        INPUT_BRANCH: ${{ inputs.branch }}
+        INPUT_LOCAL_BRANCH: ${{ inputs.local_branch }}
+        INPUT_PATH: ${{ inputs.path }}
+        INPUT_FORCE: ${{ inputs.force }}
+        INPUT_FOLLOWTAGS: ${{ inputs.followtags }}
+        INPUT_SKIP_VERIFY: ${{ inputs.skip_verify }}
+        INPUT_COMMIT: ${{ inputs.commit }}
+        INPUT_COMMIT_MESSAGE: ${{ inputs.commit_message }}
+        INPUT_TAG: ${{ inputs.tag }}
+        INPUT_EMPTY_COMMIT: ${{ inputs.empty_commit }}
+        INPUT_NO_VERIFY: ${{ inputs.no_verify }}
+        INPUT_REBASE: ${{ inputs.rebase }}
+        INPUT_MIRROR: ${{ inputs.mirror }}
 
 branding:
-  icon: 'terminal'
-  color: 'gray-dark'
+  icon: "terminal"
+  color: "gray-dark"
