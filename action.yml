@@ -54,6 +54,8 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    GITHUB_WORKSPACE: ${{ github.workspace }}
 
 branding:
   icon: 'terminal'
