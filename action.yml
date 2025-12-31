@@ -1,59 +1,59 @@
-name: 'Git Push Changes'
-description: 'Push changes to a remote git repository'
-author: 'Bo-Yi Wu'
+name: "Git Push Changes"
+description: "Push changes to a remote git repository"
+author: "Bo-Yi Wu"
 inputs:
   author_name:
-    description: 'Git author name for commits'
-    default: 'GitHub Actions'
+    description: "Git author name for commits"
+    default: "GitHub Actions"
   author_email:
-    description: 'Git author email for commits'
-    default: '41898282+github-actions[bot]@users.noreply.github.com'
+    description: "Git author email for commits"
+    default: "41898282+github-actions[bot]@users.noreply.github.com"
   netrc_machine:
-    description: 'Machine name for netrc authentication'
+    description: "Machine name for netrc authentication"
   netrc_username:
-    description: 'Username for netrc authentication'
+    description: "Username for netrc authentication"
   netrc_password:
-    description: 'Password for netrc authentication'
+    description: "Password for netrc authentication"
   ssh_key:
-    description: 'Private SSH key for authentication'
+    description: "Private SSH key for authentication"
   remote:
-    description: 'URL of the remote repository'
+    description: "URL of the remote repository"
     required: true
   remote_name:
-    description: 'Name of the remote (used in git remote add)'
-    default: 'deploy'
+    description: "Name of the remote (used in git remote add)"
+    default: "deploy"
   branch:
-    description: 'Name of the remote branch to push to'
-    default: 'master'
+    description: "Name of the remote branch to push to"
+    default: "master"
   local_branch:
-    description: 'Name of the local branch to push from'
-    default: 'HEAD'
+    description: "Name of the local branch to push from"
+    default: "HEAD"
   path:
-    description: 'Path to the git repository'
+    description: "Path to the git repository"
   force:
-    description: 'Enable force push (--force)'
+    description: "Enable force push (--force)"
   followtags:
-    description: 'Push annotated tags along with commits (--follow-tags)'
+    description: "Push annotated tags along with commits (--follow-tags)"
   skip_verify:
-    description: 'Skip SSL certificate verification'
+    description: "Skip SSL certificate verification"
   commit:
-    description: 'Commit dirty changes before pushing'
+    description: "Commit dirty changes before pushing"
   commit_message:
-    description: 'Custom commit message (requires commit: true)'
+    description: "Custom commit message (requires commit: true)"
   tag:
-    description: 'Create and push a tag with the specified name'
+    description: "Create and push a tag with the specified name"
   empty_commit:
-    description: 'Allow creating an empty commit (--allow-empty)'
+    description: "Allow creating an empty commit (--allow-empty)"
   no_verify:
-    description: 'Bypass pre-commit and commit-msg hooks (--no-verify)'
+    description: "Bypass pre-commit and commit-msg hooks (--no-verify)"
   rebase:
-    description: 'Rebase local branch on top of remote branch before pushing'
+    description: "Rebase local branch on top of remote branch before pushing"
   mirror:
-    description: 'Push all refs to remote repository with --mirror'
+    description: "Push all refs to remote repository with --mirror"
   curl_insecure:
-    description: 'Allow insecure SSL connections'
+    description: "Allow insecure SSL connections"
   version:
-    description: 'SSH version'
+    description: "drone-git-push version"
 
 runs:
   using: "composite"
