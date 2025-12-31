@@ -6,7 +6,7 @@ RUN git config --system --add safe.directory '*'
 
 USER nobody
 
-ENV GITHUB_WORKSPACE=/github/workspace
+ENV GITHUB_WORKSPACE=/github/home
 
 WORKDIR ${GITHUB_WORKSPACE}
 
