@@ -1,4 +1,4 @@
-FROM ghcr.io/appleboy/drone-git-push:1.2.0
+FROM ghcr.io/appleboy/drone-git-push:latest
 
 COPY entrypoint.sh /entrypoint.sh
 
