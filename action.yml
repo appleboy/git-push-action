@@ -50,6 +50,10 @@ inputs:
     description: 'Rebase local branch on top of remote branch before pushing'
   mirror:
     description: 'Push all refs to remote repository with --mirror'
+  curl_insecure:
+    description: 'Allow insecure SSL connections'
+  version:
+    description: 'SSH version'
 
 runs:
   using: "composite"
@@ -86,6 +90,8 @@ runs:
         INPUT_NO_VERIFY: ${{ inputs.no_verify }}
         INPUT_REBASE: ${{ inputs.rebase }}
         INPUT_MIRROR: ${{ inputs.mirror }}
+        INPUT_CURL_INSECURE: ${{ inputs.curl_insecure }}
+        DRONE_GIT_PUSH_VERSION: ${{ inputs.version }}
 
 branding:
   icon: "terminal"
